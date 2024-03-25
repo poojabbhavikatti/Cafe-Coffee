@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2",
+    "@azure/storage-blob": "^12.17.0",
+    "azure-storage": "^2.10.7",
+    "express": "^4.19.1",
+    "express-session": "^1.18.0",
+    "nodemon": "^3.1.0",
+    "passport": "^0.7.0",
+    "passport-azure-ad": "^4.3.5"
+  }
+}

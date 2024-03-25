@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cappuccino.css">
+    <link rel="icon" href="https://cafecoffee.blob.core.windows.net/images/i.png" type="image/png">
+    <title>Cappuccino</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#"><img src="https://cafecoffee.blob.core.windows.net/images/logo2.png" height="70" width="110" class="logo"></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>
+                <div class="dropdowndemo">
+                    <label class="dropdownbtn">Menu</label>
+                    <br>
+                    <div class="dropdownlist-content">
+                    <a href="/americano">Americano</a>
+                    <a href="/cappuccino">Cappuccino</a>
+                    <a href="/espresso">Espresso</a>
+                    <a href="/mocha">Mocha</a>
+                    <a href="/irish">Irish</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="https://www.worldcoffeeportal.com/Latest/News">What's New</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="box">
+      <h2>Cappuccino</h2>
+      <p id="p_inside_box"></p>
+        
+      <div class="img-box">
+        <img src="https://cafecoffee.blob.core.windows.net/images/cappuccino.png" alt="" width="400px" height="400px">
+      </div>
+    </div>
+</body>
+
+
+<script>
+    const abc = ()=>{
+        fetch('/getDescription')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.text();
+      })
+      .then(description => {
+            console.log("insid ");
+          if(description){
+            const valueForP = document.getElementById('p_inside_box');
+            valueForP.innerText = description;
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching description:', error);
+      });
+    }
+      abc();
+  </script>
+
+
+</html>
+
